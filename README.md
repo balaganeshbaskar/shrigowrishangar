@@ -1,6 +1,17 @@
 # shrigowrishangar
 
 
+# HTML COLOR CODES
+
+Background: black
+Main color : #db9839
+Lighter Shade: #e7ba7a
+
+
+
+
+
+
 Pages:
 1. Homepage
 2. About Us
