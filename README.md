@@ -3,9 +3,9 @@
 
 # HTML COLOR CODES
 
-Background: black
-Main color : #db9839
-Lighter Shade: #e7ba7a
+# Background: black
+# Main color : #db9839
+# Lighter Shade: #e7ba7a
 
 
 
