@@ -1,4 +1,10 @@
 
+body, html 
+{
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: black;
+}
+
 .container
 {
   color: #db9839;
