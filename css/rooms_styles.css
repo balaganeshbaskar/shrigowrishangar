@@ -10,6 +10,13 @@ body, html
   color: #db9839;
 }
 
+
+.section_separator
+{
+  height: 50px;
+  background-color: black;
+}
+
 .room_types
 {
   margin: auto;
