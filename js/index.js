@@ -3,7 +3,7 @@ function gettingJSON()
 {
     // document.write("jquery loaded");
 
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Hosur,TN,356&units=metric&APPID=8c2f3944cd016e3943efdcf69c7c7e26",function(json){
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Hosur,TN,356&units=metric&APPID=8c2f3944cd016e3943efdcf69c7c7e26",function(json){
 
         // $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=12.74&lon=77.82&units=metric&APPID=8c2f3944cd016e3943efdcf69c7c7e26",function(json){
 
