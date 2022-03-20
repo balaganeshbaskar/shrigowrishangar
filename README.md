@@ -1,12 +1,15 @@
 # shrigowrishangar
 
 
-# HTML COLOR CODES
+  # HTML COLOR CODES
 
-# Background: black
-# Main color : #db9839
-# Lighter Shade: #e7ba7a
+  1. Background: black
+  2. Main color : #db9839
+  3. Lighter Shade: #e7ba7a
 
+
+NOTES:
+1. USE font awesome icons 4 only!
 
 
 
