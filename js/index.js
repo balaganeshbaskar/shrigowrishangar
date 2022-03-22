@@ -216,6 +216,12 @@ function tabs_toggle(type)
     document.getElementById("deluxe_caret").hidden = true;
     document.getElementById("superior_caret").hidden = true;
     document.getElementById("grand_superior_caret").hidden = true;
+
+    document.getElementById("standard_caret_1").hidden = true;
+    document.getElementById("balcony_caret_1").hidden = true;
+    document.getElementById("deluxe_caret_1").hidden = true;
+    document.getElementById("superior_caret_1").hidden = true;
+    document.getElementById("grand_superior_caret_1").hidden = true;
     // background-image: linear-gradient(#6560b4, #9089e4);
     // var c = "black";
     // var d = "#212529";
@@ -249,6 +255,7 @@ function tabs_toggle(type)
 
         document.getElementById("standard").hidden = false;
         document.getElementById("standard_caret").hidden = false;
+        document.getElementById("standard_caret_1").hidden = false;
     }
     else if(type == 'balcony')
     {
@@ -263,6 +270,7 @@ function tabs_toggle(type)
 
         document.getElementById("balcony").hidden = false;
         document.getElementById("balcony_caret").hidden = false;
+        document.getElementById("balcony_caret_1").hidden = false;
     
     }
     else if(type == 'deluxe')
@@ -278,6 +286,7 @@ function tabs_toggle(type)
 
         document.getElementById("deluxe").hidden = false;
         document.getElementById("deluxe_caret").hidden = false;
+        document.getElementById("deluxe_caret_1").hidden = false;
     
     }
     else if(type == 'superior')
@@ -293,6 +302,7 @@ function tabs_toggle(type)
 
         document.getElementById("superior").hidden = false;
         document.getElementById("superior_caret").hidden = false;
+        document.getElementById("superior_caret_1").hidden = false;
     
     }
     else if(type == 'grand_superior')
@@ -308,6 +318,328 @@ function tabs_toggle(type)
 
         document.getElementById("grand_superior").hidden = false;
         document.getElementById("grand_superior_caret").hidden = false;
+        document.getElementById("grand_superior_caret_1").hidden = false;
     }
 
 }
+
+$( document ).ready(function() {
+    standard_currentSlide(1);
+    balcony_currentSlide(1);
+    deluxe_currentSlide(1);
+    superior_currentSlide(1);
+    grand_superior_currentSlide(1);
+
+    $('#standard_carousal').on('slid.bs.carousel', function (e) {
+        // $('#myCarousel').carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
+        // alert("hey there")
+        var currentIndex = $('#standard_carousal div.active').index() + 1;
+        standard_currentSlide(currentIndex);
+    });
+
+    $('#balcony_carousal').on('slid.bs.carousel', function (e) {
+        // $('#myCarousel').carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
+        // alert("hey there")
+        var currentIndex = $('#balcony_carousal div.active').index() + 1;
+        balcony_currentSlide(currentIndex);
+    });
+
+    $('#deluxe_carousal').on('slid.bs.carousel', function (e) {
+        // $('#myCarousel').carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
+        // alert("hey there")
+        var currentIndex = $('#deluxe_carousal div.active').index() + 1;
+        deluxe_currentSlide(currentIndex);
+    });
+
+    $('#superior_carousal').on('slid.bs.carousel', function (e) {
+        // $('#myCarousel').carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
+        // alert("hey there")
+        var currentIndex = $('#superior_carousal div.active').index() + 1;
+        superior_currentSlide(currentIndex);
+    });
+
+    $('#grand_superior_carousal').on('slid.bs.carousel', function (e) {
+        // $('#myCarousel').carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
+        // alert("hey there")
+        var currentIndex = $('#grand_superior_carousal div.active').index() + 1;
+        grand_superior_currentSlide(currentIndex);
+    });
+
+});
+
+
+
+function standard_currentSlide(n)
+{   
+    document.getElementById("standard_thumb_1").classList.remove("opacity_control");
+    document.getElementById("standard_thumb_2").classList.remove("opacity_control");
+    document.getElementById("standard_thumb_3").classList.remove("opacity_control");
+    document.getElementById("standard_thumb_4").classList.remove("opacity_control");
+
+    document.getElementById("standard_1_thumb_1").classList.remove("opacity_control");
+    document.getElementById("standard_1_thumb_2").classList.remove("opacity_control");
+    document.getElementById("standard_1_thumb_3").classList.remove("opacity_control");
+    document.getElementById("standard_1_thumb_4").classList.remove("opacity_control");
+
+    if(n == 1)
+    {
+        document.getElementById("standard_thumb_2").classList.add("opacity_control");
+        document.getElementById("standard_thumb_3").classList.add("opacity_control");
+        document.getElementById("standard_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("standard_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 2)
+    {
+        document.getElementById("standard_thumb_1").classList.add("opacity_control");
+        document.getElementById("standard_thumb_3").classList.add("opacity_control");
+        document.getElementById("standard_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("standard_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 3)
+    {
+        document.getElementById("standard_thumb_2").classList.add("opacity_control");
+        document.getElementById("standard_thumb_1").classList.add("opacity_control");
+        document.getElementById("standard_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("standard_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 4)
+    {
+        document.getElementById("standard_thumb_2").classList.add("opacity_control");
+        document.getElementById("standard_thumb_3").classList.add("opacity_control");
+        document.getElementById("standard_thumb_1").classList.add("opacity_control");
+
+        document.getElementById("standard_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("standard_1_thumb_1").classList.add("opacity_control");
+    }
+    
+}   
+
+
+function balcony_currentSlide(n)
+{   
+    document.getElementById("balcony_thumb_1").classList.remove("opacity_control");
+    document.getElementById("balcony_thumb_2").classList.remove("opacity_control");
+    document.getElementById("balcony_thumb_3").classList.remove("opacity_control");
+    document.getElementById("balcony_thumb_4").classList.remove("opacity_control");
+
+    document.getElementById("balcony_1_thumb_1").classList.remove("opacity_control");
+    document.getElementById("balcony_1_thumb_2").classList.remove("opacity_control");
+    document.getElementById("balcony_1_thumb_3").classList.remove("opacity_control");
+    document.getElementById("balcony_1_thumb_4").classList.remove("opacity_control");
+
+    if(n == 1)
+    {
+        document.getElementById("balcony_thumb_2").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_3").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("balcony_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 2)
+    {
+        document.getElementById("balcony_thumb_1").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_3").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("balcony_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 3)
+    {
+        document.getElementById("balcony_thumb_1").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_2").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("balcony_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 4)
+    {
+        document.getElementById("balcony_thumb_1").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_2").classList.add("opacity_control");
+        document.getElementById("balcony_thumb_3").classList.add("opacity_control");
+
+        document.getElementById("balcony_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("balcony_1_thumb_3").classList.add("opacity_control");
+    }
+}   
+
+function deluxe_currentSlide(n)
+{   
+    document.getElementById("deluxe_thumb_1").classList.remove("opacity_control");
+    document.getElementById("deluxe_thumb_2").classList.remove("opacity_control");
+    document.getElementById("deluxe_thumb_3").classList.remove("opacity_control");
+    document.getElementById("deluxe_thumb_4").classList.remove("opacity_control");
+
+    document.getElementById("deluxe_1_thumb_1").classList.remove("opacity_control");
+    document.getElementById("deluxe_1_thumb_2").classList.remove("opacity_control");
+    document.getElementById("deluxe_1_thumb_3").classList.remove("opacity_control");
+    document.getElementById("deluxe_1_thumb_4").classList.remove("opacity_control");
+
+    if(n == 1)
+    {
+        document.getElementById("deluxe_thumb_2").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_3").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("deluxe_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 2)
+    {
+        document.getElementById("deluxe_thumb_1").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_3").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("deluxe_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 3)
+    {
+        document.getElementById("deluxe_thumb_1").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_2").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("deluxe_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 4)
+    {
+        document.getElementById("deluxe_thumb_1").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_2").classList.add("opacity_control");
+        document.getElementById("deluxe_thumb_3").classList.add("opacity_control");
+
+        document.getElementById("deluxe_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("deluxe_1_thumb_3").classList.add("opacity_control");
+    }
+    
+}  
+
+function superior_currentSlide(n)
+{   
+    document.getElementById("superior_thumb_1").classList.remove("opacity_control");
+    document.getElementById("superior_thumb_2").classList.remove("opacity_control");
+    document.getElementById("superior_thumb_3").classList.remove("opacity_control");
+    document.getElementById("superior_thumb_4").classList.remove("opacity_control");
+
+    document.getElementById("superior_1_thumb_1").classList.remove("opacity_control");
+    document.getElementById("superior_1_thumb_2").classList.remove("opacity_control");
+    document.getElementById("superior_1_thumb_3").classList.remove("opacity_control");
+    document.getElementById("superior_1_thumb_4").classList.remove("opacity_control");
+
+    if(n == 1)
+    {
+        document.getElementById("superior_thumb_2").classList.add("opacity_control");
+        document.getElementById("superior_thumb_3").classList.add("opacity_control");
+        document.getElementById("superior_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("superior_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 2)
+    {
+        document.getElementById("superior_thumb_1").classList.add("opacity_control");
+        document.getElementById("superior_thumb_3").classList.add("opacity_control");
+        document.getElementById("superior_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("superior_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 3)
+    {
+        document.getElementById("superior_thumb_1").classList.add("opacity_control");
+        document.getElementById("superior_thumb_2").classList.add("opacity_control");
+        document.getElementById("superior_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("superior_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 4)
+    {
+        document.getElementById("superior_thumb_1").classList.add("opacity_control");
+        document.getElementById("superior_thumb_2").classList.add("opacity_control");
+        document.getElementById("superior_thumb_3").classList.add("opacity_control");
+
+        document.getElementById("superior_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("superior_1_thumb_3").classList.add("opacity_control");
+    }
+    
+}  
+
+function grand_superior_currentSlide(n)
+{   
+    document.getElementById("grand_superior_thumb_1").classList.remove("opacity_control");
+    document.getElementById("grand_superior_thumb_2").classList.remove("opacity_control");
+    document.getElementById("grand_superior_thumb_3").classList.remove("opacity_control");
+    document.getElementById("grand_superior_thumb_4").classList.remove("opacity_control");
+
+    document.getElementById("grand_superior_1_thumb_1").classList.remove("opacity_control");
+    document.getElementById("grand_superior_1_thumb_2").classList.remove("opacity_control");
+    document.getElementById("grand_superior_1_thumb_3").classList.remove("opacity_control");
+    document.getElementById("grand_superior_1_thumb_4").classList.remove("opacity_control");
+
+    if(n == 1)
+    {
+        document.getElementById("grand_superior_thumb_2").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_3").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("grand_superior_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 2)
+    {
+        document.getElementById("grand_superior_thumb_1").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_3").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("grand_superior_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_3").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 3)
+    {
+        document.getElementById("grand_superior_thumb_1").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_2").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_4").classList.add("opacity_control");
+
+        document.getElementById("grand_superior_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_4").classList.add("opacity_control");
+    }
+    else if(n == 4)
+    {
+        document.getElementById("grand_superior_thumb_1").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_2").classList.add("opacity_control");
+        document.getElementById("grand_superior_thumb_3").classList.add("opacity_control");
+
+        document.getElementById("grand_superior_1_thumb_1").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_2").classList.add("opacity_control");
+        document.getElementById("grand_superior_1_thumb_3").classList.add("opacity_control");
+    }
+    
+}  
