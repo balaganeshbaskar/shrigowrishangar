@@ -2,7 +2,7 @@
 body, html 
 {
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: #141414;
+  background-color: black;
 }
 
 .centering {
@@ -99,6 +99,7 @@ body, html
 .card {
   border-radius: 20px;
   margin-bottom: 10px;
+  background: #202020;
 }
 
 .card-img-top {
@@ -107,7 +108,6 @@ body, html
 }
 
 .card-body {
-
 }
 
 .card-title {
@@ -121,6 +121,7 @@ body, html
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 500;
   margin-top: -15px;
+  color: white;
 }
 
 @media screen and (min-width: 769px) {
@@ -175,4 +176,44 @@ body, html
   margin-top: 10px;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.maps-embed {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 769px) {
+  .testimonials {
+
+  }
+
+  .testimonials-title {
+    color: #db9839;    
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+  .testimonials-sub-title {
+
+  }
+}
+@media screen and (max-width: 768px) {
+  .testimonials {
+
+  }
+
+  .testimonials-title {
+    color: #db9839;    
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .testimonials-sub-title {
+    
+  }
+  
 }
