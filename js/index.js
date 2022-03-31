@@ -323,7 +323,7 @@ function tabs_toggle(type)
 
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
     standard_currentSlide(1);
     balcony_currentSlide(1);
     deluxe_currentSlide(1);
@@ -643,3 +643,93 @@ function grand_superior_currentSlide(n)
     }
     
 }  
+
+
+function gallery_view(n)
+{   
+    const images = [
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+        "https://images.unsplash.com/photo-1596414086775-3e321ab08f36?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60", 
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+        "https://images.unsplash.com/photo-1596414086775-3e321ab08f36?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60", 
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
+    ];
+
+
+    $('#gallery_view_modal').modal('show');
+}
+
+
+function gallery_full_render()
+{
+    var column1 = document.getElementById('col1');
+    var column2 = document.getElementById('col2');
+    var column3 = document.getElementById('col3');
+
+    var indicator = document.getElementById('carouselExampleIndicators');
+
+    const images = [
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+        "https://images.unsplash.com/photo-1596414086775-3e321ab08f36?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60", 
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+        "https://images.unsplash.com/photo-1596414086775-3e321ab08f36?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60", 
+        "https://images.unsplash.com/photo-1572720350370-8080412fc75b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwbGlmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
+    ];
+
+    var col1 ='';
+    var col2 ='';
+    var col3 ='';
+
+    var indicators = '';
+
+    var carousal_images = '';
+
+    for (let i = 0; i < images.length; i++)
+    {
+        // Gallery images
+        if(i % 3 == 0)
+        {
+            col1 = col1+'<img data-aos="fade-right" onclick="gallery_view('+i+');" class="img-fluid" src='+images[i]+'>';
+        }
+        else if(i % 3 == 1)
+        {
+            col2 = col2+'<img data-aos="fade-up" onclick="gallery_view('+i+');" class="img-fluid" src='+images[i]+'>';
+        }
+        else if(i % 3 == 2)
+        {
+            col3 = col3+'<img data-aos="fade-left" onclick="gallery_view('+i+');" class="img-fluid" src='+images[i]+'>';
+        }
+
+        // Carousal indicator
+        if(i == 0)
+        {
+            indicators = indicators + "<li class='active' data-target='#carouselExampleIndicators' data-slide-to='"+ i +"' ></li>";
+        }
+        else
+        {
+            indicators = indicators + "<li data-target='#carouselExampleIndicators' data-slide-to='"+ i +"' ></li>";
+        }
+        
+        const d = document.createElement("div");
+        // d.classList.add("carousel-item active");
+        d.classList.add("carousel-item");
+        d.innerText = "<img class='img-size' src='"+images[i]+"' />";
+
+        carousal_images = carousal_images + d;
+
+    }
+
+    // Gallery images
+    column1.innerHTML = col1;
+    column2.innerHTML = col2;
+    column3.innerHTML = col3;
+
+    // Carousal Indicators
+    var indi = "<ol class='carousel-indicators'>"+indicators+"</ol>";
+    indicator.innerHTML = indicator.innerHTML+indi;
+    indicator.innerHTML = indicator.innerHTML+carousal_images;
+
+
+}
